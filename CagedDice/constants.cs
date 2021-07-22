@@ -17,7 +17,12 @@ namespace CagedDice
             {3, 4}
         };
 
-       
+        public const string rules = "";
+
+
+        public const int startBankroll = 10;
+
+        public const string gameOver = "";
         
         
     }

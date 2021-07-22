@@ -12,7 +12,7 @@ namespace CagedDice
         private int m_playerPick;
         private int[] m_rollResults;
         private int m_correctPicks;
-        private int m_money;
+        public int m_money { private set; get; }
 
 
         #endregion
@@ -28,19 +28,25 @@ namespace CagedDice
         #region methods
         void displayWelcomeText()
         {
-            Console.WriteLine("Welcome to the Casino!\nYou are playing the Caged Dice Game!\nTo start playing press 1, to see the rules press 2!");
-            string choice = Console.ReadLine();
-            if(choice == "1")
+            while (true)
             {
-                Console.WriteLine("picked 1, new game");
-            }  
-            else if(choice == "2")
-            {
-                Console.WriteLine("picked 2, rules");
-            }
-            else
-            {
-                Console.WriteLine("Invalid Input!");
+                Console.WriteLine("Welcome to the Casino!\nYou are playing the Caged Dice Game!\nTo start playing press 1, to see the rules press 2!");
+                string choice = Console.ReadLine();
+                if (choice == "1")
+                {
+                    Console.WriteLine("Let's go!");
+                    break;
+                }
+                else if (choice == "2")
+                {
+                    Console.WriteLine(Constants.rules);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input!");
+                    continue;
+                }
             }
         }
 
